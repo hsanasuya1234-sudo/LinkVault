@@ -42,7 +42,7 @@ app.post("/api/shorten", async (req, res) => {
     });
 
     res.json({
-      shortUrl: `http://localhost:5000/${link.shortCode}`,
+      shortUrl:`${process.env.PUBLIC_URL || "http://localhost:5000"}/${link.shortCode}`,
       shortCode: link.shortCode
     });
   } catch (error) {
